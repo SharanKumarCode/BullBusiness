@@ -14,22 +14,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import com.bull.bullBusiness.R
 import com.bull.bullBusiness.SingletonInstances
-import com.bull.bullBusiness.databinding.FragmentCreateAccountBinding
+import com.bull.bullBusiness.databinding.FragmentSignInBinding
 import com.bull.bullBusiness.genericClasses.OtpTextWatcherGeneric
 import com.bull.bullBusiness.genericClasses.OtpVerificationClass
 
+class SignInFragment : Fragment() {
 
-class CreateAccountFragment : Fragment() {
-
-    private var _binding: FragmentCreateAccountBinding? = null
+    private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
     private var timer: CountDownTimer? = null
 
     private var mobileNumber: String = ""
     private lateinit var otpVerification: OtpVerificationClass
+
     private val db = SingletonInstances.getFireStoreInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,12 +46,14 @@ class CreateAccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCreateAccountBinding.inflate(inflater, container, false)
+        _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.i(TAG, "SignInFragment created")
 
         binding.mobileNumberTextField.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -73,9 +76,11 @@ class CreateAccountFragment : Fragment() {
                         val task = collectionRef.whereEqualTo("mobile_number", phoneNumberCheck).get()
 
                         task.addOnSuccessListener {
-                            if (!it.isEmpty){
+                            Log.i(TAG, "User : ${it.size()} , mobile : $phoneNumberCheck")
+
+                            if (it.isEmpty){
                                 binding.mobileNumberTextInputLayout.apply {
-                                    error = "Account already exist with this mobile number"
+                                    error = "Account does not exist with this mobile number"
                                 }
                             } else {
                                 binding.mobileNumberTextInputLayout.apply {
@@ -97,42 +102,18 @@ class CreateAccountFragment : Fragment() {
             }
         })
 
-        binding.UserNameTextField.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                when {
-                    binding.UserNameTextField.text?.length!! < 5 -> {
-                        binding.UserNameTextInputLayout.error = "minimum 5 characters required"
-                    }
-                    binding.UserNameTextField.text?.length!! > 20 -> {
-                        binding.UserNameTextInputLayout.error = "restrict name to 20 characters"
-                    }
-                    else -> {
-                        binding.UserNameTextInputLayout.error = null
-                    }
-                }
-            }
-        })
-
         binding.generateOtpButton.setOnClickListener {
             val phoneNumberCheck = "+91${binding.mobileNumberTextField.text.toString()}"
-
-            val collectionRef = db.collection("Users")
+            val collectionRef = db.collection("Saloon_Users")
             val task = collectionRef.whereEqualTo("mobile_number", phoneNumberCheck).get()
             task
                 .addOnSuccessListener {
-                    if (!it.isEmpty) {
-                        Log.i(TAG, "User does not exists")
+                    Log.i(TAG, "User : ${it.size()}")
+                    if (it.isEmpty) {
+                        Log.i("TAG", "User does not exists")
                         val builder = AlertDialog.Builder(binding.root.context)
                         val message =
-                            "User account already exist with Mobile Number: $phoneNumberCheck \n\n Use Sign-In Option"
+                            "User account does not exist with Mobile Number: $phoneNumberCheck "
                         val title = "Error"
                         builder.setMessage(message)
                             .setTitle(title)
@@ -141,8 +122,10 @@ class CreateAccountFragment : Fragment() {
                             ) { p0, _ -> p0?.dismiss() }
                             .show()
                     } else {
-                        Log.i("TAG", "New User")
+                        Log.i(TAG, "Existing User")
                         generateOtp()
+                        binding.otpBox1.requestFocus()
+                        binding.otpBox1.background = AppCompatResources.getDrawable(binding.root.context, R.drawable.bg_otp_box_focused)
                     }
                 }
                 .addOnFailureListener {
@@ -160,9 +143,9 @@ class CreateAccountFragment : Fragment() {
             createAccount()
         }
 
-        binding.SignInButton.setOnClickListener {
-            val signInFragment = SignInFragment()
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.SignInFragmentContainer, signInFragment)?.commit()
+        binding.CreateAccountButton.setOnClickListener {
+            val createAccountFragment = CreateAccountFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.SignInFragmentContainer, createAccountFragment)?.commit()
         }
     }
 
@@ -211,11 +194,10 @@ class CreateAccountFragment : Fragment() {
         val mobileNumberField = binding.mobileNumberTextField.text.toString()
 
         if (mobileNumberField.isNotEmpty()
-            && mobileNumberField.length == 10
-            && binding.UserNameTextField.text.toString().isNotEmpty())
+            && mobileNumberField.length == 10)
         {
             mobileNumber = "+91${binding.mobileNumberTextField.text.toString()}"
-            otpVerification = OtpVerificationClass(mobileNumber,binding.UserNameTextField.text.toString(),binding)
+            otpVerification = OtpVerificationClass(mobileNumber,binding)
             if (resendCLicked){
                 otpVerification.reSendVerificationCode(this.requireActivity())
             } else otpVerification.sendVerificationCode(this.requireActivity())
@@ -242,7 +224,6 @@ class CreateAccountFragment : Fragment() {
     }
 
     companion object {
-        private const val TAG = "TAGCreateAccountFragment"
+        private const val TAG = "TAGSignInFragment"
     }
-
 }

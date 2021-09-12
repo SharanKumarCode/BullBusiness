@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_vertical|center_horizontal"
-    tools:context=".fragments.signUpLogInActivity.CreateAccountFragment">
+    tools:context=".fragments.signUpLogInActivity.SignInFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mobileNumberTextInputLayout"
@@ -17,7 +17,11 @@
         app:boxBackgroundMode="outline"
         app:helperText="@string/helperEnterMobileNumber"
         app:helperTextTextAppearance="@style/HelperText"
-        app:hintTextAppearance="@style/HintText">
+        app:hintTextAppearance="@style/HintText"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/mobileNumberTextField"
@@ -29,47 +33,25 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/UserNameTextInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="10dp"
-
-        app:boxBackgroundMode="outline"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:errorEnabled="true"
-        app:helperTextTextAppearance="@style/HelperText"
-        app:hintTextAppearance="@style/HintText"
-        android:layout_below="@+id/mobileNumberTextInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/UserNameTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintEnterName"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/white" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <RelativeLayout
         android:id="@+id/otpBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/UserNameTextInputLayout"
+        android:layout_below="@+id/mobileNumberTextInputLayout"
+        android:layout_alignStart="@+id/mobileNumberTextInputLayout"
+        android:layout_marginTop="20dp"
 
         android:visibility="gone">
 
         <EditText
             android:id="@+id/otpBox1"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
+
+            android:cursorVisible="true"
+            android:textCursorDrawable="@color/teal_200"
 
             android:inputType="number"
             android:maxLength="1"
@@ -77,11 +59,12 @@
             android:background="@drawable/bg_otp_box"
             android:textAlignment="center"
             android:textSize="26sp"
-            tools:ignore="Autofill,LabelFor" />
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/otpBox2"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
 
@@ -92,11 +75,12 @@
             android:background="@drawable/bg_otp_box"
             android:textAlignment="center"
             android:textSize="26sp"
-            tools:ignore="Autofill,LabelFor" />
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/otpBox3"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
 
@@ -111,7 +95,7 @@
 
         <EditText
             android:id="@+id/otpBox4"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
 
@@ -126,7 +110,7 @@
 
         <EditText
             android:id="@+id/otpBox5"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
 
@@ -141,7 +125,7 @@
 
         <EditText
             android:id="@+id/otpBox6"
-            android:layout_width="40dp"
+            android:layout_width="38dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
 
@@ -186,13 +170,13 @@
         android:gravity="center"
 
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
         android:layout_below="@+id/otpBox"
-        android:layout_alignEnd="@id/otpBox"
-        android:layout_alignStart="@id/otpBox"/>
+        android:layout_alignEnd="@id/mobileNumberTextInputLayout"
+        android:layout_alignStart="@id/mobileNumberTextInputLayout"/>
 
 
     <Button
@@ -217,25 +201,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/verifyOtpButton"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp">
 
         <TextView
-            android:id="@+id/labelSignIn"
+            android:id="@+id/labelCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="@string/textAlreadyHaveAccount" />
+            android:text="@string/textDoNotHaveAccount"
+            android:layout_marginTop="14dp"/>
 
         <Button
-            android:id="@+id/SignInButton"
+            android:id="@+id/CreateAccountButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/buttonCreateAccount"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/labelCreateAccount"
             android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/labelSignIn"
-            android:text="@string/buttonSignIn"
-            android:textColor="@color/white"/>
+            />
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>

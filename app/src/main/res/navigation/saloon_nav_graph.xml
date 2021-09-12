@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/saloon_nav_graph"
+    app:startDestination="@id/saloonListFragment">
+
+    <fragment
+        android:id="@+id/saloonListFragment"
+        android:name="com.bull.bullBusiness.saloonList.SaloonListFragment"
+        android:label="fragment_saloon_list"
+        tools:layout="@layout/fragment_saloon_list" >
+        <action
+            android:id="@+id/action_saloonListFragment_to_addSaloonFragment"
+            app:destination="@id/addSaloonFragment" />
+        <action
+            android:id="@+id/action_saloonListFragment_to_saloonItemFragment"
+            app:destination="@id/saloonItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSaloonFragment"
+        android:name="com.bull.bullBusiness.saloonList.AddSaloonFragment"
+        android:label="fragment_add_saloon"
+        tools:layout="@layout/fragment_add_saloon" >
+        <action
+            android:id="@+id/action_addSaloonFragment_to_saloonListFragment"
+            app:destination="@id/saloonListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saloonItemFragment"
+        android:name="com.bull.bullBusiness.saloonList.SaloonItemFragment"
+        android:label="fragment_saloon_item"
+        tools:layout="@layout/fragment_saloon_item" >
+        <action
+            android:id="@+id/action_saloonItemFragment_to_saloonListFragment"
+            app:destination="@id/saloonListFragment" />
+    </fragment>
+</navigation>

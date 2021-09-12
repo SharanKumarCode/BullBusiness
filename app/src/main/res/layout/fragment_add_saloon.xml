@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".saloonList.AddSaloonFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/enterSaloonNameTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="40"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterSaloonNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterSaloonName"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobileNumberTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/enterSaloonNameTextInputLayout"
+            android:layout_marginTop="20dp"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+
+            app:boxBackgroundMode="outline"
+            app:helperText="@string/helperEnterMobileNumber"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mobileNumberTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterContactNumber"
+                android:inputType="phone"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_alignEnd="@+id/streetNameTextInputLayout"
+            android:layout_below="@+id/mobileNumberTextInputLayout"
+
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginEnd="-10dp"
+
+            android:background="@color/teal_700"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/doorNumberTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/mobileNumberTextInputLayout"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="-30dp"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/doorNumberTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterDoorNumber"
+                android:inputType="text"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/streetNameTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/mobileNumberTextInputLayout"
+            android:layout_toEndOf="@+id/doorNumberTextInputLayout"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="10dp"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/streetNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterStreetName"
+                android:inputType="text"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addressLineInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/doorNumberTextInputLayout"
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_alignEnd="@+id/streetNameTextInputLayout"
+            android:layout_marginTop="20dp"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addressLineTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintAddressLine"
+                android:inputType="textMultiLine"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cityNameTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/addressLineInputLayout"
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_marginTop="20dp"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cityNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintCityName"
+                android:inputType="text"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/stateNameTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/addressLineInputLayout"
+            android:layout_toEndOf="@+id/cityNameTextInputLayout"
+            android:layout_alignEnd="@+id/addressLineInputLayout"
+            android:layout_alignBottom="@+id/cityNameTextInputLayout"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="10dp"
+
+            android:textAlignment="center"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/stateNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/hintStateName"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pinCodeTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/cityNameTextInputLayout"
+            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
+            android:layout_alignEnd="@+id/mobileNumberTextInputLayout"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+
+            app:counterMaxLength="6"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pinCodeTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterPinCode"
+                android:digits="0123456789"
+                android:inputType="textFilter"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_alignEnd="@+id/streetNameTextInputLayout"
+            android:layout_below="@+id/pinCodeTextInputLayout"
+
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginEnd="-10dp"
+
+            android:background="@color/teal_700"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/saloonDisplayPicText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pinCodeTextInputLayout"
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_alignEnd="@+id/doorNumberTextInputLayout"
+
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/textChooseSaloonDisplayPic"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/saloonDisplayCameraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/saloonDisplayPicText"
+            android:layout_alignStart="@+id/saloonDisplayPicText"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_baseline_camera_40" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/saloonDisplayGalleryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/saloonDisplayPicText"
+            android:layout_alignEnd="@+id/saloonDisplayPicText"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:tint="@color/teal_200"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_baseline_insert_photo_40" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/saloonLocationLabelText"
+            android:layout_alignBottom="@+id/saloonLocationStatusText"
+            android:layout_marginBottom="-10dp"
+            android:layout_toEndOf="@+id/saloonDisplayPicText"
+            android:background="@color/teal_700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/saloonLocationLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textChooseLocation"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+
+            android:layout_below="@+id/pinCodeTextInputLayout"
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignStart="@+id/streetNameTextInputLayout"
+            android:layout_alignEnd="@+id/streetNameTextInputLayout"
+
+            android:textAlignment="center"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/saloonLocationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/saloonDisplayPicText"
+            android:layout_alignStart="@+id/saloonLocationLabelText"
+            android:layout_alignEnd="@+id/saloonLocationLabelText"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_map_40"
+            android:tint="@color/googleMapIconInactive" />
+
+        <TextView
+            android:id="@+id/saloonLocationStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/textSaloonLocationStatus"
+            android:textSize="14sp"
+            android:textAlignment="center"
+
+            android:layout_below="@+id/saloonLocationButton"
+            android:layout_alignStart="@+id/saloonLocationLabelText"
+            android:layout_alignEnd="@+id/saloonLocationLabelText"
+            android:layout_marginTop="10dp"
+
+            android:visibility="invisible"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/uploadedSaloonDisplayPic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_below="@+id/saloonLocationStatusText"
+            android:layout_alignStart="@+id/saloonDisplayPicText"
+            android:layout_alignEnd="@+id/saloonLocationLabelText"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:visibility="gone"
+
+            app:srcCompat="@drawable/ic_baseline_insert_photo_40" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+
+            android:layout_below="@+id/uploadedSaloonDisplayPic"
+            android:layout_alignStart="@+id/doorNumberTextInputLayout"
+            android:layout_alignEnd="@+id/streetNameTextInputLayout"
+
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="-10dp"
+
+            android:background="@color/teal_700" />
+
+        <TextView
+            android:id="@+id/haircutRupeeSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/haircutPriceTextInputLayout"
+            android:layout_alignBottom="@+id/haircutPriceTextInputLayout"
+            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
+
+            android:layout_marginStart="10dp"
+
+            android:gravity="center"
+
+            android:text="@string/textRupeeSymbol"
+            android:textSize="18sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/haircutPriceTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/uploadedSaloonDisplayPic"
+            android:layout_toEndOf="@+id/haircutRupeeSymbol"
+            android:layout_alignEnd="@+id/mobileNumberTextInputLayout"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+
+            app:counterMaxLength="6"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/haircutPriceTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterHaircutPrice"
+                android:digits="0123456789"
+                android:inputType="textFilter"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/shavingRupeeSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/shavingPriceTextInputLayout"
+            android:layout_alignBottom="@+id/shavingPriceTextInputLayout"
+            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
+
+            android:layout_marginStart="10dp"
+
+            android:gravity="center"
+
+            android:text="@string/textRupeeSymbol"
+            android:textSize="18sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shavingPriceTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/haircutPriceTextInputLayout"
+            android:layout_toEndOf="@+id/shavingRupeeSymbol"
+            android:layout_alignEnd="@+id/mobileNumberTextInputLayout"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+
+            app:counterMaxLength="6"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shavingPriceTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterShavingPrice"
+                android:digits="0123456789"
+                android:inputType="textFilter"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/haircutShavingRupeeSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/haircutShavingPriceTextInputLayout"
+            android:layout_alignBottom="@+id/haircutShavingPriceTextInputLayout"
+            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
+
+            android:layout_marginStart="10dp"
+
+            android:gravity="center"
+
+            android:text="@string/textRupeeSymbol"
+            android:textSize="18sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/haircutShavingPriceTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/shavingPriceTextInputLayout"
+            android:layout_toEndOf="@+id/haircutShavingRupeeSymbol"
+            android:layout_alignEnd="@+id/mobileNumberTextInputLayout"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+
+            app:counterMaxLength="6"
+
+            app:boxBackgroundMode="outline"
+            app:helperTextTextAppearance="@style/HelperText"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/haircutShavingTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEnterHaircutShavingPrice"
+                android:digits="0123456789"
+                android:inputType="textFilter"
+                android:textColorHint="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uploadSaloonButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+
+            android:layout_below="@+id/haircutShavingPriceTextInputLayout"
+            android:layout_alignStart="@+id/enterSaloonNameTextInputLayout"
+            android:layout_alignEnd="@+id/enterSaloonNameTextInputLayout"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/buttonUploadSaloon"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</ScrollView>

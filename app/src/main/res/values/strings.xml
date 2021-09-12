@@ -8,7 +8,7 @@
     <string name="hintSearchEdit">Search for shops</string>
     <string name="hintEnterMobileNumber">Enter Mobile Number</string>
     <string name="hintEnterName">Enter User Name</string>
-    <string name="hintEnterSaloonName">Enter Saloon Name (Optional)</string>
+    <string name="hintEnterSaloonName">Enter Saloon Name</string>
     <string name="hintCaption">Caption (Optional)</string>
     <string name="hintComment">Enter comment..</string>
     <string name="placeHolderAreaName">Gandhipuram</string>
@@ -120,5 +120,61 @@
     <string name="buttonGoogleSignIn">GOOGLE SIGN-IN</string>
     <string name="buttonFacebookSignIn">FACEBOOK SIGN-IN</string>
     <string name="buttonMobileSignIn">MOBILE SIGN-IN</string>
+    <string name="buttonAddSaloon">Add Your Saloon</string>
+    <string name="hintEnterContactNumber">Enter Contact Number</string>
+    <string name="hintEnterDoorNumber">Door Number</string>
+    <string name="hintEnterStreetName">Street Name</string>
+    <string name="hintCityName">City</string>
+    <string name="hintStateName">State/Region</string>
+    <string name="hintEnterPinCode">PIN / ZIP Code</string>
+    <string name="textChooseSaloonDisplayPic">Choose Saloon Display Picture</string>
+    <string name="textChooseLocation">Enter Your Location</string>
+    <string name="buttonUploadSaloon">Upload Saloon</string>
+    <string name="hintAddressLine">Address Line (Optional)</string>
+    <string name="hintEnterHaircutPrice">Haircut Price</string>
+    <string name="textRupeeSymbol">₹</string>
+    <string name="hintEnterShavingPrice">Shaving Price</string>
+    <string name="hintEnterHaircutShavingPrice">Haircut + Shaving Price</string>
+    <string name="textSaloonLocationStatus">Saloon Location data obtained</string>
+    <string name="textSaloonDataUploading">Please wait.. Saloon Data is Uploading..</string>
+
+    <string-array name="state_region_list">
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli and Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Ladakh</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Puducherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
 
 </resources>
