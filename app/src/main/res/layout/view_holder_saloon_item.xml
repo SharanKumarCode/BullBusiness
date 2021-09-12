@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    android:paddingTop="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+
+        android:layout_marginStart="13dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/black_700"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/saloonDisplayImageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/deelux_saloon">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:id="@+id/saloonNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/saloonDisplayImageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toStartOf="@+id/saloonHaircutPriceText"
+                android:text="@string/textViewSaloonName"
+                android:textColor="#DDDDDD"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/areaNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/saloonNameTextView"
+                android:layout_alignStart="@+id/saloonNameTextView"
+                android:text="@string/placeHolderAreaName"
+                android:textColor="#BBBBBB"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/openStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/areaNameTextView"
+
+                android:layout_alignBottom="@+id/saloonRatingImage"
+                android:layout_marginTop="20dp"
+                android:text="@string/placeHolderOpenStatus"
+                android:textColor="#BBBBBB"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/saloonHaircutPriceText"
+                android:layout_alignBottom="@+id/saloonHaircutPriceText"
+                android:layout_marginEnd="31dp"
+                android:layout_toStartOf="@+id/saloonHaircutPriceText"
+
+                android:text="@string/textHaircut"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/saloonHaircutPriceText"
+                android:layout_alignBottom="@+id/saloonHaircutPriceText"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@+id/saloonHaircutPriceText"
+                android:background="@color/teal_200" />
+
+            <TextView
+                android:id="@+id/saloonHaircutPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/areaNameTextView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:text="@string/textHaircutPrice"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/saloonShavingPriceText"
+                android:layout_alignTop="@+id/saloonShavingPriceText"
+                android:layout_alignBottom="@+id/saloonShavingPriceText"
+                android:layout_marginEnd="31dp"
+                android:layout_toStartOf="@+id/saloonShavingPriceText"
+
+                android:text="@string/textShaving"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/saloonShavingPriceText"
+                android:layout_alignBottom="@+id/saloonShavingPriceText"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@+id/saloonShavingPriceText"
+
+                android:background="@color/teal_200" />
+
+            <TextView
+                android:id="@+id/saloonShavingPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/saloonHaircutPriceText"
+                android:layout_alignStart="@+id/saloonHaircutPriceText"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+
+                android:text="@string/textShavingPrice"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/saloonRatingImage"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/saloonShavingPriceText"
+                android:layout_alignParentStart="true"
+
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/contentDescriptionRating"
+                android:src="@drawable/ic_rating_three_stars" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

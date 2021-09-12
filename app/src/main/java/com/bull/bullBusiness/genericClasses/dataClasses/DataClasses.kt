@@ -44,6 +44,7 @@ data class SaloonDataClass(val saloonID: String?,
                            val contact: String?,
                            val saloonAddress: String?,
                            val haircutPrice: Number?,
+                           val shavingPrice: Number?,
                            val reviewCount: Number?,
                            val locationData: GeoPoint?,
                            var distance: Float?)

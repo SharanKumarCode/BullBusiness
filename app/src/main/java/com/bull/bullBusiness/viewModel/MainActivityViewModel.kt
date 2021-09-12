@@ -12,16 +12,16 @@ class MainActivityViewModel: ViewModel() {
     private var saloonData = MutableLiveData<SaloonDataClass>()
     private var userLocationData = MutableLiveData<GeoPoint>()
 
-    fun assignShopData(shop: MutableList<SaloonDataClass>){
+    fun assignSaloonData(shop: MutableList<SaloonDataClass>){
         Log.i("TAGLocation","assignShopData")
         saloonDataList.value = shop
     }
 
-    fun getShopDataList(): MutableLiveData<MutableList<SaloonDataClass>>{
+    fun getSaloonDataList(): MutableLiveData<MutableList<SaloonDataClass>>{
         return saloonDataList
     }
 
-    fun putShopData(id: String?){
+    fun putSaloonData(id: String?){
         for (d in saloonDataList.value!!){
             if (d.saloonID == id){
                 saloonData.value = d

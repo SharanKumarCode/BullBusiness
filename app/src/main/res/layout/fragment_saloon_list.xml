@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".saloonList.SaloonListFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:context=".saloonList.SaloonListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saloonListRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/addSaloonButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="?android:attr/actionBarSize"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addSaloonButton"
@@ -17,14 +35,19 @@
 
         android:background="@drawable/bg_add_saloon"
         android:backgroundTint="@color/teal_700_comp_red"
-        app:backgroundTintMode="multiply"
-
         android:text="@string/buttonAddSaloon"
+
         android:textAllCaps="false"
         android:textColor="@color/teal_200_comp_red"
+        app:backgroundTintMode="multiply"
 
         app:icon="@drawable/ic_baseline_add_red_40"
         app:iconTint="@color/teal_200_comp_red" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+
