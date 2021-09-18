@@ -11,6 +11,7 @@ class MainActivityViewModel: ViewModel() {
     private var saloonDataList = MutableLiveData<MutableList<SaloonDataClass>>()
     private var saloonData = MutableLiveData<SaloonDataClass>()
     private var userLocationData = MutableLiveData<GeoPoint>()
+    private var saloonRefreshDataState = MutableLiveData<SaloonRefreshData>()
 
     fun assignSaloonData(shop: MutableList<SaloonDataClass>){
         Log.i("TAGLocation","assignShopData")
@@ -29,7 +30,7 @@ class MainActivityViewModel: ViewModel() {
         }
     }
 
-    fun getShopData():MutableLiveData<SaloonDataClass>{
+    fun getSaloonData():MutableLiveData<SaloonDataClass>{
         return saloonData
     }
 
@@ -47,6 +48,19 @@ class MainActivityViewModel: ViewModel() {
         Log.i("TAGLocation","user location modified : ${userLocationData.value}")
         return userLocationData
     }
+
+    fun setSaloonRefreshState(data: SaloonRefreshData){
+        saloonRefreshDataState.value = data
+    }
+
+    fun getSaloonRefreshState(): MutableLiveData<SaloonRefreshData>{
+        return saloonRefreshDataState
+    }
+
+    data class SaloonRefreshData(
+        val saloonPhotosState: Boolean = false,
+        val saloonReview: Boolean = false
+    )
 
 
 

@@ -3,17 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable-v24/ic_baseline_rate_review_24.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable-v24/ic_baseline_share_40.xml" value="0.22135416666666666" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/avd_anim.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/avd_app_logo_stroked_anim.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_add_saloon.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_otp_box.xml" value="0.22135416666666666" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_otp_box_focused.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_out_line.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_plain.xml" value="0.22135416666666666" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_rounded_black.xml" value="0.3769230769230769" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_rounded_solid_small_rounded.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_toggle_out_line_closed.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_toggle_out_line_open.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_toggle_widget.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/bg_toggle_widget_open.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/ic_app_logo_stroked.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/ic_bull.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/ic_rating_five_stars.xml" value="0.3828125" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/drawable/ic_rupee_icon.xml" value="0.3828125" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/activity_sign_up_log_in.xml" value="0.20520833333333333" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
@@ -23,8 +32,11 @@
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_create_account.xml" value="0.33" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_my_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_container.xml" value="0.20520833333333333" />
-        <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_item.xml" value="0.5" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_list.xml" value="0.33" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_photos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_price_list.xml" value="0.33" />
+        <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_saloon_review.xml" value="0.36666666666666664" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/fragment_sign_up_and_sign_in.xml" value="0.5" />
         <entry key="..\:/Sample/BullBusiness/app/src/main/res/layout/state_list_item.xml" value="0.36666666666666664" />

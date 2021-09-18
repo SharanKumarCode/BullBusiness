@@ -67,7 +67,7 @@ class SaloonListRecyclerViewAdapter(lists: MutableList<SaloonDataClass>, dataVie
         holder.itemView.setOnClickListener {
 
             try {
-                startSaloonItemFragment(fragment, dataModel, saloonList[position])
+                launchSaloonItemFragment(fragment, dataModel, saloonList[position])
             }catch (e: Error){
                 Log.i(TAG, "error occurred: $e")
             }
@@ -78,7 +78,7 @@ class SaloonListRecyclerViewAdapter(lists: MutableList<SaloonDataClass>, dataVie
         return saloonList.size
     }
 
-    private fun startSaloonItemFragment(fragment: Fragment, dataModel: MainActivityViewModel, saloonList: SaloonDataClass){
+    private fun launchSaloonItemFragment(fragment: Fragment, dataModel: MainActivityViewModel, saloonList: SaloonDataClass){
 
         dataModel.putSaloonData(saloonList.saloonID)
 
