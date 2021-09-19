@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_plain_rounded"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/white">
+
+        <TableRow android:padding="10dp" android:weightSum="4">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_weight="1.2"
+
+                android:text="@string/textOpenTime"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_weight="1.2"
+
+                android:textStyle="bold"
+                android:text="@string/textCloseTime"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"/>
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.9"
+                android:text="@string/textDaysOfWeekMonday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogMondayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+                android:layout_margin="2dp"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogMondayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+                android:layout_margin="2dp"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogMondayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_weight="0.7"
+                android:layout_marginEnd="2dp"
+
+                android:checked="true"/>
+
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekTuesday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogTuesdayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogTuesdayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogTuesdayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.7"
+
+                android:checked="true"/>
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekWednesday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogWednesdayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogWednesdayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogWednesdayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+
+                android:checked="true"/>
+
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekThursday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogThursdayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogThursdayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogThursdayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.7"
+
+                android:checked="true"/>
+
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekFriday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogFridayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogFridayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogFridayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.7"
+
+                android:checked="true"/>
+
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekSaturday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogSaturdayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogSaturdayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogSaturdayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.7"
+
+                android:checked="true"/>
+
+        </TableRow>
+
+        <TableRow android:padding="5dp" android:weightSum="4" android:layout_width="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.9"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/textDaysOfWeekSunday"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogSundayOpenTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/black_mild"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialogSundayCloseTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+
+                android:backgroundTint="@color/black_mild"
+                android:text="@string/placeHolderTime"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/dialogSundayToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.7"
+
+                android:checked="false"/>
+
+        </TableRow>
+
+        <TableRow android:padding="10dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialogSaloonTimingResetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="@string/buttonReset"
+                android:textColor="@color/white"
+
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+
+                android:backgroundTint="@color/black_mild"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialogSaloonTimingOkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+
+                android:text="@string/buttonOK"
+
+                android:backgroundTint="@color/teal_200"/>
+
+        </TableRow>
+
+        <TableRow android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/dialogSaloonTimingCloseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_close_black_40"
+
+                android:backgroundTint="@color/white"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
+

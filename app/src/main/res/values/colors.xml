@@ -10,6 +10,7 @@
     <color name="teal_200_comp_red">#FFDA0318</color>
     <color name="black_200">#FF1F1F1F</color>
     <color name="black_700">#FF0F0F0F</color>
+    <color name="black_mild">#99212224</color>
 
     <color name="openStatusColor">#0FFF33</color>
     <color name="closeStatusColor">#FF3925</color>

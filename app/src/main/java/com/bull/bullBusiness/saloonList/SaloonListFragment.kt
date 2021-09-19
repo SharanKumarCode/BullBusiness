@@ -1,6 +1,6 @@
 package com.bull.bullBusiness.saloonList
 
-import android.graphics.drawable.AnimatedVectorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
 import android.transition.TransitionInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,15 +17,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bull.bullBusiness.R
 import com.bull.bullBusiness.SingletonInstances
 import com.bull.bullBusiness.adapters.SaloonListRecyclerViewAdapter
-import com.bull.bullBusiness.databinding.FragmentSaloonContainerBinding
 import com.bull.bullBusiness.databinding.FragmentSaloonListBinding
 import com.bull.bullBusiness.genericClasses.SingletonUserData
 import com.bull.bullBusiness.genericClasses.dataClasses.SaloonDataClass
 import com.bullSaloon.bull.viewModel.MainActivityViewModel
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.GeoPoint
-import com.google.firebase.firestore.QuerySnapshot
+import java.time.Duration
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
 
@@ -33,7 +34,6 @@ class SaloonListFragment : Fragment() {
     private var _binding: FragmentSaloonListBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var animate: AnimatedVectorDrawable
     private lateinit var dataViewModel: MainActivityViewModel
     private lateinit var recyclerState: Parcelable
     private val saloonLists = mutableListOf<SaloonDataClass>()
@@ -57,6 +57,7 @@ class SaloonListFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -87,6 +88,7 @@ class SaloonListFragment : Fragment() {
         SingletonUserData.updateScrollState("SaloonListRecycler",recyclerState)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun generateDataFirestore() {
 
         dataViewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
@@ -120,6 +122,17 @@ class SaloonListFragment : Fragment() {
 
                 val distance = 0F
 
+                val timeFormatter = DateTimeFormatter.ofPattern("hh : mm a")
+                val currentDay = LocalDate.now().dayOfWeek.name.lowercase().replaceFirstChar { firstChar -> firstChar.uppercase() }
+                val currentTime = LocalTime.now().format(timeFormatter)
+                val saloonTimingsData = document.get("saloon_timings") as HashMap<String, HashMap<String, Any>>
+                val timeData = saloonTimingsData[currentDay]
+                val openTime = LocalTime.parse(timeData?.get("open_time").toString(), timeFormatter)
+                val closeTime = LocalTime.parse(timeData?.get("close_time").toString(), timeFormatter)
+                val currentTimeTemporal = LocalTime.parse(currentTime, timeFormatter)
+                val diffOpenTime = Duration.between(openTime, currentTimeTemporal)
+                val diffCloseTime = Duration.between(currentTimeTemporal, closeTime)
+
                 val saloonData = SaloonDataClass(
                     saloonID,
                     saloonName,
@@ -133,7 +146,8 @@ class SaloonListFragment : Fragment() {
                     shavingPrice,
                     reviewCount,
                     locationData,
-                    distance
+                    distance,
+                    saloonTimingsData
                 )
 
                 saloonLists.add(saloonData)

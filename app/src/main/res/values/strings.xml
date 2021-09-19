@@ -38,6 +38,7 @@
     <string name="placeHolderReviewCount">5</string>
     <string name="placeHolderMobileNumber">+919941677517</string>
     <string name="placeHolderNoComments">No Comments yet...</string>
+    <string name="placeHolderTime">%1$s : %2$s %3$s</string>
 
     <string name="textViewSaloonName">Shop Name</string>
     <string name="textResendOtp">Resending OTP in %1$d secs</string>
@@ -73,6 +74,16 @@
     <string name="textRupeeSymbol">₹</string>
     <string name="textChooseSaloonDisplayPic">Choose Saloon Display Picture</string>
     <string name="textChooseLocation">Enter Your Location</string>
+    <string name="textOpenTime">Open Time</string>
+    <string name="textCloseTime">Close Time</string>
+
+    <string name="textDaysOfWeekMonday">Monday</string>
+    <string name="textDaysOfWeekTuesday">Tuesday</string>
+    <string name="textDaysOfWeekWednesday">Wednesday</string>
+    <string name="textDaysOfWeekThursday">Thursday</string>
+    <string name="textDaysOfWeekFriday">Friday</string>
+    <string name="textDaysOfWeekSaturday">Saturday</string>
+    <string name="textDaysOfWeekSunday">Sunday</string>
 
     <string name="helperEnterMobileNumber">Enter mobile number without country code</string>
 
@@ -101,6 +112,7 @@
     <string name="buttonMobileSignIn">MOBILE SIGN-IN</string>
     <string name="buttonAddSaloon">Add Your Saloon</string>
     <string name="buttonUploadSaloon">Upload Saloon</string>
+    <string name="buttonSaloonOpenTimings">Open Timings</string>
 
     <!--    Content Description Texts-->
     <string name="contentDescription">Bull Logo</string>
@@ -137,7 +149,8 @@
     <string name="popUpMenuItemRemovePhoto">Remove Photo</string>
 
     <string name="hello_blank_fragment">hello_blank_fragment</string>
-    <string name="buttonSaloonOpenTimings">Open Timings</string>
+    <string name="buttonReset">Reset</string>
+
 
     <string-array name="state_region_list">
         <item>Andaman and Nicobar Islands</item>

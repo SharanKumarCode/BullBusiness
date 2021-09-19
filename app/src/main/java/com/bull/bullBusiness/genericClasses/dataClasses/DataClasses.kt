@@ -47,7 +47,8 @@ data class SaloonDataClass(val saloonID: String?,
                            val shavingPrice: Number?,
                            val reviewCount: Number?,
                            val locationData: GeoPoint?,
-                           var distance: Float?)
+                           var distance: Float?,
+                           val saloonTimingsData: HashMap<String, HashMap<String, Any>>)
 
 data class UserDataClass(
     val user_id: String,
