@@ -2,6 +2,7 @@ package com.bull.bullBusiness.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.bull.bullBusiness.saloonList.SaloonPhotosContainerFragment
 import com.bull.bullBusiness.saloonList.SaloonPhotosFragment
 import com.bull.bullBusiness.saloonList.SaloonPriceListFragment
 import com.bull.bullBusiness.saloonList.SaloonReviewFragment
@@ -19,7 +20,7 @@ class SaloonItemViewPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragm
                 SaloonPriceListFragment()
             }
             1->{
-                SaloonPhotosFragment()
+                SaloonPhotosContainerFragment()
             }
             2->{
                 SaloonReviewFragment()

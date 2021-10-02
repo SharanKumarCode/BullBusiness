@@ -25,6 +25,18 @@
         <action
             android:id="@+id/action_addSaloonFragment_to_saloonListFragment"
             app:destination="@id/saloonListFragment" />
+        <action
+            android:id="@+id/action_addSaloonFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment">
+
+            <argument
+                android:name="saloon_id"
+                app:argType="string"
+                android:defaultValue="none"
+                />
+
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/saloonItemFragment"
@@ -34,5 +46,25 @@
         <action
             android:id="@+id/action_saloonItemFragment_to_saloonListFragment"
             app:destination="@id/saloonListFragment" />
+        <action
+            android:id="@+id/action_saloonItemFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" >
+            <argument
+                android:name="saloon_id"
+                app:argType="string"
+                android:defaultValue="none"
+                />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.bull.bullBusiness.camera.CameraFragment"
+        android:label="CameraFragment" >
+        <action
+            android:id="@+id/action_cameraFragment_to_addSaloonFragment"
+            app:destination="@id/addSaloonFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_saloonItemFragment"
+            app:destination="@id/saloonItemFragment" />
     </fragment>
 </navigation>

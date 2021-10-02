@@ -22,6 +22,9 @@
     <string name="hintCityName">City</string>
     <string name="hintStateName">State/Region</string>
     <string name="hintEnterPinCode">PIN / ZIP Code</string>
+    <string name="hintEnterStyleName">Enter Style name</string>
+    <string name="hintEnterPrice">Enter Price</string>
+
 
     <string name="placeHolderAreaName">Gandhipuram</string>
     <string name="placeHolderOpenStatus">Open</string>
@@ -37,14 +40,14 @@
     <string name="placeHolderSaloonAddress">Saloon Address</string>
     <string name="placeHolderReviewCount">5</string>
     <string name="placeHolderMobileNumber">+919941677517</string>
-    <string name="placeHolderNoComments">No Comments yet...</string>
+    <string name="placeHolderNoComments">No Comments yet . . . </string>
     <string name="placeHolderTime">%1$s : %2$s %3$s</string>
 
     <string name="textViewSaloonName">Shop Name</string>
     <string name="textResendOtp">Resending OTP in %1$d secs</string>
     <string name="textAlreadyHaveAccount">Already have an account?</string>
     <string name="textDoNotHaveAccount">Do not have an account?</string>
-    <string name="textUploading">Uploading ...</string>
+    <string name="textUploading">Uploading . . . </string>
     <string name="textProgressIndicator">%1$s</string>
     <string name="textBullMagicImageDate">%1$d %2$s %3$d</string>
     <string name="textTabNices">Nices</string>
@@ -55,7 +58,7 @@
     <string name="textMenuItemStyles">Styles</string>
     <string name="textNoImages">No Photos yet..</string>
     <string name="textNoComments">No Comments yet..</string>
-    <string name="textNoReviews">No Reviews yet.. Be the First to add a Review and Rating</string>
+    <string name="textNoReviews">No Reviews yet.. </string>
     <string name="textFollowers">Followers</string>
     <string name="textFollowing">Following</string>
     <string name="textHaircut">Haircut</string>
@@ -113,6 +116,11 @@
     <string name="buttonAddSaloon">Add Your Saloon</string>
     <string name="buttonUploadSaloon">Upload Saloon</string>
     <string name="buttonSaloonOpenTimings">Open Timings</string>
+    <string name="buttonDelete">Delete</string>
+    <string name="buttonLoadMoreReviews">Load more reviews</string>
+    <string name="buttonAddPhoto">Upload Photo</string>
+    <string name="buttonReset">Reset</string>
+    <string name="buttonAddPricing">Add Pricing</string>
 
     <!--    Content Description Texts-->
     <string name="contentDescription">Bull Logo</string>
@@ -149,7 +157,7 @@
     <string name="popUpMenuItemRemovePhoto">Remove Photo</string>
 
     <string name="hello_blank_fragment">hello_blank_fragment</string>
-    <string name="buttonReset">Reset</string>
+    <string name="buttonSetSaloonDp">Set as Saloon Display Picture</string>
 
 
     <string-array name="state_region_list">

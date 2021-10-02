@@ -24,6 +24,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
 
+        <service
+            android:name=".services.UploadImageToFirebaseService"
+            android:enabled="true"
+            android:exported="false"/>
+
         <activity
             android:name=".SplashScreenActivity"
             android:screenOrientation="portrait"

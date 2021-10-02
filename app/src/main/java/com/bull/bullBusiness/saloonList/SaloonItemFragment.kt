@@ -12,10 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CompoundButton
-import android.widget.TimePicker
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
@@ -24,6 +21,7 @@ import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.HandlerCompat
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
@@ -89,7 +87,7 @@ class SaloonItemFragment : Fragment() {
             }
         })
 
-        //        Getting data from ViewModel - MainActivityViewModel
+//        Getting data from ViewModel - MainActivityViewModel
 
         dataViewModel.getSaloonData().observe(viewLifecycleOwner, { data ->
 
@@ -157,6 +155,7 @@ class SaloonItemFragment : Fragment() {
                 super.onPageSelected(position)
 
                 viewPagerAdapter.notifyItemChanged(position)
+                viewPagerAdapter.notifyDataSetChanged()
             }
         })
 
@@ -175,6 +174,13 @@ class SaloonItemFragment : Fragment() {
                 dialogSaloonTimings()
             }
         }
+
+        dataViewModel.getCameraClickMode().observe(viewLifecycleOwner, {
+            if (it == "clicked"){
+                navController?.navigate(R.id.action_saloonItemFragment_to_cameraFragment, bundleOf("saloon_id" to saloonID))
+                dataViewModel.assignCameraClickMode("none")
+            }
+        })
 
     }
 
@@ -321,25 +327,6 @@ class SaloonItemFragment : Fragment() {
 
     private fun resetSaloonTimeDialog(openTimeButtons: MutableList<AppCompatButton>, closeTimeButtons: MutableList<AppCompatButton>, toggleButtons: MutableList<SwitchCompat>){
 
-//        openTimeButtons.forEach { button ->
-//            button.text = requireContext().resources.getString(R.string.placeHolderTime, "08", "00", "AM")
-//        }
-//
-//        closeTimeButtons.forEach { button ->
-//            button.text = requireContext().resources.getString(R.string.placeHolderTime, "08", "00", "PM")
-//        }
-//
-//        toggleButtons.forEach { switchButtons ->
-//            switchButtons.isChecked = true
-//        }
-//
-//        for (i in 0..6){
-//            setWorkingDayHelper(openTimeButtons[i] , closeTimeButtons[i], true)
-//        }
-//
-//        toggleButtons[6].isChecked = false
-//        setWorkingDayHelper(openTimeButtons[6] , closeTimeButtons[6], false)
-
         for (i in 0..6){
             openTimeButtons[i].text = saloonTimingsData[daysOfWeek[i]]?.get("open_time").toString()
             closeTimeButtons[i].text = saloonTimingsData[daysOfWeek[i]]?.get("close_time").toString()
@@ -368,7 +355,7 @@ class SaloonItemFragment : Fragment() {
 
     private fun setSaloonDisplayPic(profilePicRef: String){
 
-        val imageRef = storageRef.child(profilePicRef)
+        val imageRef = storageRef.storage.getReferenceFromUrl(profilePicRef)
 
         GlideApp.with(binding.root.context)
             .asBitmap()

@@ -4,14 +4,17 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bull.bullBusiness.genericClasses.dataClasses.SaloonDataClass
+import com.bull.bullBusiness.genericClasses.dataClasses.SaloonPhotosData
 import com.google.firebase.firestore.GeoPoint
 
 class MainActivityViewModel: ViewModel() {
 
     private var saloonDataList = MutableLiveData<MutableList<SaloonDataClass>>()
     private var saloonData = MutableLiveData<SaloonDataClass>()
-    private var userLocationData = MutableLiveData<GeoPoint>()
     private var saloonRefreshDataState = MutableLiveData<SaloonRefreshData>()
+    private var saloonPhotoData = MutableLiveData<SaloonPhotosData>()
+    private var cameraFragmentMode = MutableLiveData("none")
+
 
     fun assignSaloonData(shop: MutableList<SaloonDataClass>){
         Log.i("TAGLocation","assignShopData")
@@ -34,21 +37,6 @@ class MainActivityViewModel: ViewModel() {
         return saloonData
     }
 
-    fun assignUserLocationData(data: GeoPoint){
-
-        Log.i("TAGLocation","user location obtained : $data")
-        userLocationData.value = data
-    }
-
-    fun getUserLocationData(): MutableLiveData<GeoPoint>{
-        Log.i("TAGLocation","user location provided : ${userLocationData.value}")
-        if (userLocationData.value == null){
-            userLocationData.value = GeoPoint(0.0,0.0)
-        }
-        Log.i("TAGLocation","user location modified : ${userLocationData.value}")
-        return userLocationData
-    }
-
     fun setSaloonRefreshState(data: SaloonRefreshData){
         saloonRefreshDataState.value = data
     }
@@ -57,10 +45,30 @@ class MainActivityViewModel: ViewModel() {
         return saloonRefreshDataState
     }
 
+    fun assignSaloonPhotoData(data: SaloonPhotosData){
+        saloonPhotoData.value = data
+    }
+
+    fun getSaloonPhotoData(): MutableLiveData<SaloonPhotosData>{
+        return saloonPhotoData
+    }
+
+    fun assignCameraClickMode(data: String){
+        cameraFragmentMode.value = data
+    }
+
+    fun getCameraClickMode(): MutableLiveData<String>{
+        return cameraFragmentMode
+    }
+
     data class SaloonRefreshData(
         val saloonPhotosState: Boolean = false,
         val saloonReview: Boolean = false
     )
+
+    companion object {
+        private const val TAG = "TAGMainActivityViewModel"
+    }
 
 
 

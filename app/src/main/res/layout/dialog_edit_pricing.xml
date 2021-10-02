@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:gravity="center"
+    android:background="@drawable/bg_popup_rounded_solid"
+
+    app:layout_constraintHorizontal_bias="0.50"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/styleLabelDialogPriceImage"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+
+        app:srcCompat="@drawable/ic_style_icon_menu_white"
+        android:layout_alignTop="@+id/styleNameDialogPriceTextInputLayout"
+        android:layout_alignBottom="@+id/styleNameDialogPriceTextInputLayout"
+        android:layout_alignParentStart="true"
+
+        android:layout_marginBottom="20dp"
+
+        android:tint="@color/black"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/styleNameDialogPriceTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+
+        android:layout_toEndOf="@+id/styleLabelDialogPriceImage"
+        app:boxBackgroundMode="filled"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+
+        app:errorEnabled="true"
+        app:counterTextColor="@color/black"
+        app:counterTextAppearance="@style/counterText"
+        app:hintEnabled="false"
+        app:hintTextAppearance="@style/HintText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/styleNameDialogPriceTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintEnterStyleName"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/rupeeSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignStart="@+id/styleLabelDialogPriceImage"
+        android:layout_alignTop="@+id/priceDialogPriceTextInputLayout"
+        android:layout_alignBottom="@+id/priceDialogPriceTextInputLayout"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+
+        android:gravity="center"
+
+        android:text="@string/textRupeeSymbol"
+        android:textSize="32sp"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/priceDialogPriceTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/styleNameDialogPriceTextInputLayout"
+        android:layout_alignEnd="@+id/styleNameDialogPriceTextInputLayout"
+        android:layout_alignStart="@+id/styleNameDialogPriceTextInputLayout"
+        android:layout_marginTop="20dp"
+
+        app:boxBackgroundMode="filled"
+
+        app:counterTextAppearance="@style/counterText"
+        app:counterTextColor="@color/black"
+        app:errorEnabled="true"
+        app:hintEnabled="false"
+        app:hintTextAppearance="@style/HintText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/priceDialogPriceTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:hint="@string/hintEnterPrice"
+            android:inputType="textFilter"
+            android:textColorHint="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/deleteOkButtonContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+
+        android:weightSum="2"
+
+        android:layout_below="@+id/priceDialogPriceTextInputLayout"
+        android:layout_alignStart="@+id/styleLabelDialogPriceImage"
+        android:layout_alignEnd="@+id/styleNameDialogPriceTextInputLayout"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteDialogPriceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+
+            android:background="@android:color/transparent"
+
+            android:text="@string/buttonDelete"
+            android:textColor="@color/teal_700_comp_red"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/okDialogPriceButton"
+
+            android:backgroundTint="@color/teal_200"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:text="@string/buttonOK" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/closeDialogPriceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/deleteOkButtonContainer"
+        android:layout_alignStart="@+id/styleLabelDialogPriceImage"
+        android:layout_alignEnd="@+id/deleteOkButtonContainer"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:src="@drawable/ic_baseline_close_black_40" />
+
+</RelativeLayout>

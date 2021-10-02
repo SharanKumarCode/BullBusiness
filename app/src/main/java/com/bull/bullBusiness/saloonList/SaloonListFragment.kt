@@ -117,8 +117,7 @@ class SaloonListFragment : Fragment() {
                     document.getDouble("average_rating.current_average_rating")?.roundToInt()
                 val reviewCount = document.getLong("average_rating.number_of_reviews")?.toInt()
 
-                val saloonNameUnderScore = saloonName?.replace("\\s".toRegex(), "_")
-                val imageUrl = "Saloon_Images/$saloonID/${saloonNameUnderScore}_displayPicture.jpg"
+                val imageUrl = document.getString("display_pic_image_ref")
 
                 val distance = 0F
 
@@ -133,6 +132,7 @@ class SaloonListFragment : Fragment() {
                 val diffOpenTime = Duration.between(openTime, currentTimeTemporal)
                 val diffCloseTime = Duration.between(currentTimeTemporal, closeTime)
 
+
                 val saloonData = SaloonDataClass(
                     saloonID,
                     saloonName,
@@ -142,6 +142,7 @@ class SaloonListFragment : Fragment() {
                     openStatus,
                     contact,
                     saloonAddress,
+                    pricingList,
                     haircutPrice,
                     shavingPrice,
                     reviewCount,

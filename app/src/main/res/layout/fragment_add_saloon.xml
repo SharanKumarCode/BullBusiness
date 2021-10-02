@@ -402,16 +402,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
             android:layout_alignTop="@+id/haircutPriceTextInputLayout"
             android:layout_alignBottom="@+id/haircutPriceTextInputLayout"
-            android:layout_alignStart="@+id/mobileNumberTextInputLayout"
 
             android:layout_marginStart="10dp"
 
             android:gravity="center"
 
             android:text="@string/textRupeeSymbol"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/haircutPriceTextInputLayout"

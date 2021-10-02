@@ -12,27 +12,12 @@ data class MyNicesData(
     val timeStamp: String
 )
 
-data class MyPhotosData(
+data class SaloonPhotosData(
+    val saloonID: String,
     val photoID: String,
     val imageRef: String,
-    val userName: String,
-    val userID: String,
-    val nices: Int,
     val timestamp: String,
-    val saloonName: String,
-    val caption: String
-)
-
-data class BullMagicListData(
-    val userId: String,
-    val userName: String,
-    val photoId: String,
-    val imageRef: String,
-    val timeStamp: String,
-    val niceStatus: Boolean = false,
-    val niceCount: Number = 0,
-    val saloonName: String = "",
-    val caption: String = "",
+    val displayPic: Boolean
 )
 
 data class SaloonDataClass(val saloonID: String?,
@@ -43,6 +28,7 @@ data class SaloonDataClass(val saloonID: String?,
                            val openStatus:Boolean?,
                            val contact: String?,
                            val saloonAddress: String?,
+                           val pricingList: HashMap<String, Number>?,
                            val haircutPrice: Number?,
                            val shavingPrice: Number?,
                            val reviewCount: Number?,
