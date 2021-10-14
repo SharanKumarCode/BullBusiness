@@ -29,7 +29,7 @@ Saloon -
 *	View all the appointments by time, date and service required.
 *	View rating and Reviews
 *	Upload images of customers showcasing their skill.
-*	Ypdate / Upload Display picture of the Saloon
+*	Update / Upload Display picture of the Saloon
 
 Camera -
 
