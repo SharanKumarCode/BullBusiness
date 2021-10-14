@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/appointmentsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_add_pricing"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <LinearLayout
+            android:id="@+id/appointmentSubContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/appointmentUserDisplayPic"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:src="@drawable/ic_baseline_person_black_40"
+                android:layout_margin="5dp"
+
+                android:layout_weight="0.3"
+
+                android:backgroundTint="@color/white"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/appointmentUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+
+                    android:text="@string/placeHolderUserName"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appointmentTimeLabelImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/appointmentUserName"
+                    android:layout_alignStart="@+id/appointmentUserName"
+                    android:layout_marginTop="10dp"
+                    android:tint="@color/purple_200"
+                    app:srcCompat="@drawable/ic_baseline_time_40" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/appointmentTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignTop="@+id/appointmentTimeLabelImage"
+                    android:layout_alignBottom="@+id/appointmentTimeLabelImage"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@+id/appointmentTimeLabelImage"
+
+                    android:gravity="center"
+
+                    android:text="@string/placeHolderTime"
+                    android:textColor="@color/purple_200"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appointmentDateLabelImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/appointmentTimeLabelImage"
+                    android:layout_alignStart="@+id/appointmentTimeLabelImage"
+                    android:layout_marginTop="10dp"
+                    android:tint="@color/teal_200"
+                    app:srcCompat="@drawable/ic_appointment_icon" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/appointmentDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignTop="@+id/appointmentDateLabelImage"
+                    android:layout_alignBottom="@+id/appointmentDateLabelImage"
+                    android:layout_alignStart="@+id/appointmentTimeText"
+                    android:gravity="center"
+                    android:text="@string/placeHolderDate"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appointmentLabelServiceName"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/appointmentDateLabelImage"
+                    android:layout_alignStart="@+id/appointmentUserName"
+                    android:layout_marginTop="20dp"
+                    android:tint="@color/teal_200"
+                    app:srcCompat="@drawable/ic_style_icon_menu_white"
+
+                    android:visibility="gone"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/appointmentServiceNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignTop="@+id/appointmentLabelServiceName"
+                    android:layout_alignBottom="@+id/appointmentLabelServiceName"
+                    android:layout_alignStart="@+id/appointmentTimeText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+
+                    android:gravity="start"
+
+                    android:text="@string/placeHolderServiceName"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelAppointment"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/appointmentSubContainer"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="130dp"
+
+            android:text="@string/buttonCancel"
+            android:textAllCaps="false"
+            android:textColor="@color/teal_200_comp_red"
+
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

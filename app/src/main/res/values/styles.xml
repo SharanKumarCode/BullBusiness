@@ -24,6 +24,10 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+
     <style name="SCBSwitch" parent="Theme.BullBusiness">
         <!-- active thumb & track color (30% transparency) -->
         <item name="colorControlActivated">@color/facebookColor</item>

@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".saloonList.SaloonItemFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -183,42 +184,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:layout_toStartOf="@+id/appointmentSaloonItemButton"
-                    android:layout_alignTop="@+id/saloonOpenTimingButtons"
-                    android:layout_alignBottom="@+id/appointmentSaloonItemButton"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-
-                    app:srcCompat="@drawable/ic_baseline_share_40"/>
-
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/appointmentSaloonItemButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
                     android:layout_below="@+id/saloonOpenTimingButtons"
-
                     android:layout_alignStart="@+id/saloonOpenTimingButtons"
                     android:layout_alignEnd="@+id/saloonOpenTimingButtons"
                     android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/teal_700"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginStart="40dp"
 
-                    android:clickable="true"
-                    android:contentDescription="@string/contentDescriptionAppointment"
-                    android:focusable="true"
+                    app:srcCompat="@drawable/ic_baseline_share_40"/>
 
-                    android:text="@string/buttonAppointment"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
             </RelativeLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabInputSaloonItem"
                 style="@style/Widget.MaterialComponents.TabLayout.PrimarySurface"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                app:tabMode="scrollable"
 
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintBottom_toBottomOf="parent"

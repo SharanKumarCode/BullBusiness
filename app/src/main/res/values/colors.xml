@@ -5,9 +5,9 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-
     <color name="teal_700_comp_red">#FF870102</color>
     <color name="teal_200_comp_red">#FFDA0318</color>
+
     <color name="black_200">#FF1F1F1F</color>
     <color name="black_700">#FF0F0F0F</color>
     <color name="black_mild">#99212224</color>
@@ -16,8 +16,9 @@
     <color name="closeStatusColor">#FF3925</color>
     <color name="googleMapIconInactive">#960A0A</color>
     <color name="googleMapIconActive">#EA4335</color>
+    <color name="facebookColor">#1877F2</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="facebookColor">#1877F2</color>
+
 </resources>

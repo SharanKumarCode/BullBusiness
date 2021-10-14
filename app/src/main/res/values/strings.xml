@@ -42,6 +42,10 @@
     <string name="placeHolderMobileNumber">+919941677517</string>
     <string name="placeHolderNoComments">No Comments yet . . . </string>
     <string name="placeHolderTime">%1$s : %2$s %3$s</string>
+    <string name="placeHolderDate">%1$s , %2$s %3$s</string>
+    <string name="placeHolderNumberOfAppointments">%1$d</string>
+    <string name="placeHolderServiceName">Haircut + Shaving</string>
+
 
     <string name="textViewSaloonName">Shop Name</string>
     <string name="textResendOtp">Resending OTP in %1$d secs</string>
@@ -79,6 +83,8 @@
     <string name="textChooseLocation">Enter Your Location</string>
     <string name="textOpenTime">Open Time</string>
     <string name="textCloseTime">Close Time</string>
+    <string name="textLabelAppointment">Appointment</string>
+    <string name="textLabelAppointments">Appointments</string>
 
     <string name="textDaysOfWeekMonday">Monday</string>
     <string name="textDaysOfWeekTuesday">Tuesday</string>
@@ -158,6 +164,7 @@
 
     <string name="hello_blank_fragment">hello_blank_fragment</string>
     <string name="buttonSetSaloonDp">Set as Saloon Display Picture</string>
+    <string name="buttonCancel">Cancel</string>
 
 
     <string-array name="state_region_list">

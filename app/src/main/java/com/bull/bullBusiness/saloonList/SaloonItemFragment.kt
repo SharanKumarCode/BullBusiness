@@ -127,6 +127,10 @@ class SaloonItemFragment : Fragment() {
                     tab.text = "Reviews"
                     tab.setIcon(R.drawable.ic_baseline_rate_review_24)
                 }
+                3->{
+                    tab.text = "Appointments"
+                    tab.setIcon(R.drawable.ic_appointment)
+                }
             }
         }.attach()
 

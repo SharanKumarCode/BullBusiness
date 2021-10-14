@@ -41,3 +41,15 @@ data class UserDataClass(
     val user_name: String,
     val mobileNumber: String,
     val profilePicBitmap: Bitmap? = null)
+
+data class AppointmentDataClass(
+    val appointmentID: String,
+    val userID: String,
+    val user_name: String,
+    val saloonID: String,
+    val saloonName: String,
+    val areaName: String,
+    val service: String,
+    val date: String,
+    val time: String
+)
